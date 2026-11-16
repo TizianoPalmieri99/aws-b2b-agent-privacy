@@ -1,16 +1,17 @@
-﻿Tiziano Palmieri / AWS B2B Agent
+﻿Tiziano Palmieri / AWS B2B Agent e AWS B2B Agent - Dati
 
 # Informativa privacy
 
 Ultimo aggiornamento: 16 novembre 2026
 
-**App in fase di sviluppo.** È disponibile un test locale del
-collegamento, attivabile personalmente dal titolare. Non è un servizio
-pubblico e non mantiene un collegamento persistente.
+**Progetti in fase di sviluppo.** Questa informativa riguarda
+AWS B2B Agent e l'app dedicata AWS B2B Agent - Dati. Sono progetti riservati
+al titolare, non servizi aperti ad altri utenti. La lettura dei dati tramite
+portabilità non è ancora attiva; il precedente test OAuth locale è fermo.
 
 ## 1. Chi gestisce l'app
 
-Tiziano Palmieri, Italia, gestisce AWS B2B Agent, un progetto destinato
+Tiziano Palmieri, Italia, gestisce AWS B2B Agent e AWS B2B Agent - Dati, destinati
 al supporto della propria attività professionale. Per domande sul trattamento
 dei dati: [palmieritiziano99@gmail.com](mailto:palmieritiziano99@gmail.com).
 
@@ -114,11 +115,38 @@ scrivere a [palmieritiziano99@gmail.com](mailto:palmieritiziano99@gmail.com).
 Resta possibile presentare un reclamo al
 [Garante per la protezione dei dati personali](https://www.garanteprivacy.it/).
 
-## 8. Aggiornamenti
+## 8. App dedicata alla portabilità: AWS B2B Agent - Dati
+
+È in preparazione un'app distinta per il prodotto ufficiale Member Data
+Portability API (Member), dedicato all'accesso ai propri dati LinkedIn
+da parte dei membri idonei nello Spazio economico europeo e in Svizzera.
+Non si tratta di accesso al feed generale o di ricerca di altri profili.
+
+Lo scope previsto è `r_dma_portability_self_serve`. A seconda
+dei domini effettivamente disponibili, il prodotto permette di recuperare
+dati del proprio account, profilo, post, messaggi, inviti e attività social.
+I messaggi e le interazioni possono contenere anche dati di interlocutori.
+La finalità prevista è analizzare i dati professionali del titolare e
+preparare bozze di contenuti o risposte. Non abilita invii o pubblicazioni.
+
+Questa funzione non è attualmente implementata né collegata. Prima di
+chiedere il consenso o acquisire dati saranno definiti e descritti i domini
+necessari, la base giuridica per i trattamenti effettivi, l'eventuale uso
+di servizi AI, i destinatari, i trasferimenti, i tempi di conservazione
+e la cancellazione. Il token di identità non viene convertito in un token
+di portabilità e non è sufficiente per leggere questi dati.
+
+Secondo la documentazione LinkedIn, il consenso alla portabilità può
+avviare l'archiviazione dei dati da parte di LinkedIn per le API Snapshot
+e Changelog, anche prima del loro recupero da parte dell'app.
+Si applicano l'[informativa LinkedIn](https://www.linkedin.com/legal/privacy-policy)
+e le condizioni specifiche presentate dal prodotto.
+
+## 9. Aggiornamenti
 
 Il testo sarà aggiornato prima di aggiungere
 finalità, permessi, destinatari o modalità di conservazione diverse da quelle
 descritte. La data della versione è indicata all'inizio della pagina.
 
-AWS B2B Agent è il nome del progetto di Tiziano Palmieri.
+AWS B2B Agent e AWS B2B Agent - Dati sono progetti di Tiziano Palmieri.
 Non è un prodotto ufficiale di LinkedIn o Amazon Web Services.
