@@ -4,9 +4,9 @@
 
 Ultimo aggiornamento: 16 novembre 2026
 
-**App in fase di sviluppo.** Il collegamento API non è ancora attivo.
-Questa informativa descrive il progetto nello stato attuale e la pagina pubblica.
-Sarà aggiornata prima di attivare l'accesso ai dati LinkedIn.
+**App in fase di sviluppo.** È disponibile un test locale del
+collegamento, attivabile personalmente dal titolare. Non è un servizio
+pubblico e non mantiene un collegamento persistente.
 
 ## 1. Chi gestisce l'app
 
@@ -16,19 +16,20 @@ dei dati: [palmieritiziano99@gmail.com](mailto:palmieritiziano99@gmail.com).
 
 ## 2. Ambito e stato del servizio
 
-L'app è in preparazione per l'uso del solo titolare. Non è attualmente un servizio
-di accesso aperto ad altri utenti. Non è stato configurato un collegamento API
-a LinkedIn. La sola lettura di questa pagina non collega un account.
+L'app è riservata all'uso del solo titolare. Non è un servizio
+di accesso aperto ad altri utenti. La sola lettura di questa pagina non
+collega un account.
 
-La fase iniziale prevista riguarda esclusivamente l'autenticazione tramite
-LinkedIn e la lettura dei dati di base autorizzati. Pubblicazione, commenti,
+Il test riguarda esclusivamente l'autenticazione tramite
+LinkedIn e una lettura dei dati di base autorizzati. Pubblicazione, commenti,
 messaggi, inviti e altre azioni sull'account restano disabilitati.
 
-## 3. Dati e permessi del collegamento futuro
+## 3. Dati e permessi del test
 
-Attualmente l'app non recupera dati tramite le API LinkedIn e non riceve
-token di accesso. Per una prima fase è previsto di richiedere soltanto i permessi
-`openid` e `profile`. Questi consentirebbero di ricevere un identificativo
+Solo dopo l'accesso e il consenso personale sul sito ufficiale LinkedIn,
+il test riceve un token e interroga l'endpoint ufficiale userinfo.
+Richiede soltanto i permessi `openid` e `profile`.
+Questi consentono di ricevere un identificativo
 dell'account, il nome, il riferimento alla foto del profilo e le informazioni
 tecniche presenti nella risposta di autenticazione, come scadenza e lingua,
 se disponibili. Non è previsto il permesso `email`.
@@ -40,9 +41,11 @@ dal titolare, non un dato recuperato tramite l'API.
 
 ## 4. Finalità e contatti
 
-La finalità prevista per il futuro collegamento è riconoscere l'account
-autorizzato e verificarne il funzionamento. Nello stato attuale non avviene
-alcun trattamento di dati acquisiti tramite le API LinkedIn.
+Il test verifica il funzionamento del collegamento con l'account del titolare,
+su sua richiesta. Il trattamento è limitato a questo controllo tecnico,
+sulla base del legittimo interesse a verificare il corretto funzionamento
+e la sicurezza dell'integrazione per la propria attività. Non comporta
+decisioni automatizzate con effetti giuridici o significativi.
 
 Chi scrive volontariamente al recapito indicato fornisce l'indirizzo email,
 il contenuto della richiesta ed eventuali allegati. Questi dati sono utilizzati
@@ -50,25 +53,34 @@ per rispondere e gestire la richiesta, sulla base del legittimo interesse
 a dare seguito alle comunicazioni ricevute. Non inviare password o token.
 I dati non sono destinati a pubblicità, vendita o profilazione commerciale.
 
-Prima dell'attivazione del collegamento saranno precisati i trattamenti
-effettivi e le relative basi giuridiche. L'autorizzazione tecnica OAuth
-non sostituisce questa valutazione.
+L'autorizzazione tecnica OAuth è distinta dalla base giuridica del trattamento.
+Qualsiasi funzione ulteriore richiederà una nuova valutazione e un aggiornamento
+dell'informativa prima della sua attivazione.
 
 ## 5. Conservazione e sicurezza
 
-Il progetto prevede un collegamento eseguito localmente sul dispositivo del
-titolare. Dati di autenticazione e token non devono essere pubblicati su GitHub,
-inseriti in chat, registrati nei normali log o conservati nei report del progetto.
+Il test viene eseguito localmente sul dispositivo del titolare. Il Client Secret
+dell'app si inserisce nel modulo locale ed è trasmesso solo all'endpoint OAuth
+ufficiale LinkedIn. Codice temporaneo, token e dati del profilo sono usati in
+memoria per il test; non sono salvati su disco, nel database, nei report o nei log.
+Non sono inviati a servizi di intelligenza artificiale. Il risultato mostra
+soltanto se il test è riuscito, senza rendere visibili dati del profilo.
+
+I riferimenti ai dati temporanei vengono eliminati dopo il test o in caso
+di errore; il programma locale termina dopo 15 minuti. Non viene garantito
+l'azzeramento fisico della memoria del dispositivo. Il browser riceve un cookie
+tecnico locale di durata massima 15 minuti per proteggere il collegamento.
+Il codice temporaneo può transitare nella navigazione del browser: non
+condividerne l'indirizzo o la cronologia.
 
 Le comunicazioni inviate al recapito di contatto sono conservate per il tempo
 necessario a gestire la richiesta e gli eventuali obblighi di legge o esigenze
-di tutela dei diritti. Prima di attivare le API saranno descritte le modalità
-effettive di custodia dei token, accesso, conservazione e cancellazione dei dati.
-La durata dei token è distinta dalla conservazione dei dati.
+di tutela dei diritti. Le eventuali informazioni conservate da LinkedIn e
+dal fornitore di hosting seguono i termini delle rispettive informative.
 
 ## 6. Servizi esterni e hosting della pagina
 
-Per il futuro collegamento, LinkedIn riceverà le richieste di autenticazione
+Durante il test, LinkedIn riceve le richieste di autenticazione
 e le chiamate autorizzate e tratterà i dati secondo la propria
 [informativa privacy](https://www.linkedin.com/legal/privacy-policy).
 
@@ -89,10 +101,12 @@ nel trattamento dei dati recuperati tramite API.
 
 ## 7. Revoca e richieste sui dati
 
-Dopo l'attivazione, l'accesso potrà essere revocato dalle impostazioni
+L'accesso concesso può essere revocato dalle impostazioni
 LinkedIn relative alle applicazioni o ai servizi autorizzati.
 La revoca impedirà il successivo accesso autorizzato; non cancellerà
-automaticamente eventuali copie già conservate localmente.
+automaticamente eventuali copie già conservate. Il test non conserva copie
+del profilo. Scartare un token localmente non revoca l'autorizzazione
+concessa su LinkedIn; l'autorizzazione può restare attiva fino alla revoca.
 
 Per richieste di accesso, rettifica, cancellazione, limitazione,
 opposizione o portabilità, nei casi previsti dalla normativa applicabile,
@@ -102,7 +116,7 @@ Resta possibile presentare un reclamo al
 
 ## 8. Aggiornamenti
 
-Il testo sarà aggiornato prima di attivare il collegamento o aggiungere
+Il testo sarà aggiornato prima di aggiungere
 finalità, permessi, destinatari o modalità di conservazione diverse da quelle
 descritte. La data della versione è indicata all'inizio della pagina.
 

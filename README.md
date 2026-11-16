@@ -1,14 +1,7 @@
 ﻿# AWS B2B Agent - Privacy
 
-Informativa privacy dell'app in sviluppo di Tiziano Palmieri.
-
-Il collegamento API LinkedIn non è ancora attivo. Il testo descrive lo stato
-attuale del progetto e l'hosting della pagina; va aggiornato prima di attivare
-nuovi trattamenti dei dati.
+[Informativa privacy completa](privacy.md) del test locale di collegamento
+LinkedIn di Tiziano Palmieri. Non è un servizio per altri utenti. Il test non
+conserva credenziali o dati del profilo e non pubblica contenuti.
 
 Contatto: palmieritiziano99@gmail.com
-
-La pagina statica non contiene script, moduli, risorse remote o analytics.
-I trattamenti tecnici di GitHub Pages restano soggetti all'informativa di GitHub.
-
-Leggi l'[informativa privacy completa](privacy.md).

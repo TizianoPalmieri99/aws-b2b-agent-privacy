@@ -26,9 +26,9 @@
   <h1>Informativa privacy</h1>
   <p>Ultimo aggiornamento: <time datetime="2026-11-16">16 novembre 2026</time></p>
   <aside class="status" aria-label="Stato dell'informativa">
-    <strong>App in fase di sviluppo.</strong> Il collegamento API non è ancora attivo.
-    Questa informativa descrive il progetto nello stato attuale e la pagina pubblica.
-    Sarà aggiornata prima di attivare l'accesso ai dati LinkedIn.
+    <strong>App in fase di sviluppo.</strong> È disponibile un test locale del
+    collegamento, attivabile personalmente dal titolare. Non è un servizio
+    pubblico e non mantiene un collegamento persistente.
   </aside>
 
   <h2>1. Chi gestisce l'app</h2>
@@ -37,17 +37,18 @@
     dei dati: <a href="mailto:palmieritiziano99@gmail.com">palmieritiziano99@gmail.com</a>.</p>
 
   <h2>2. Ambito e stato del servizio</h2>
-  <p>L'app è in preparazione per l'uso del solo titolare. Non è attualmente un servizio
-    di accesso aperto ad altri utenti. Non è stato configurato un collegamento API
-    a LinkedIn. La sola lettura di questa pagina non collega un account.</p>
-  <p>La fase iniziale prevista riguarda esclusivamente l'autenticazione tramite
-    LinkedIn e la lettura dei dati di base autorizzati. Pubblicazione, commenti,
+  <p>L'app è riservata all'uso del solo titolare. Non è un servizio
+    di accesso aperto ad altri utenti. La sola lettura di questa pagina non
+    collega un account.</p>
+  <p>Il test riguarda esclusivamente l'autenticazione tramite
+    LinkedIn e una lettura dei dati di base autorizzati. Pubblicazione, commenti,
     messaggi, inviti e altre azioni sull'account restano disabilitati.</p>
 
-  <h2>3. Dati e permessi del collegamento futuro</h2>
-  <p>Attualmente l'app non recupera dati tramite le API LinkedIn e non riceve
-    token di accesso. Per una prima fase è previsto di richiedere soltanto i permessi
-    <code>openid</code> e <code>profile</code>. Questi consentirebbero di ricevere un identificativo
+  <h2>3. Dati e permessi del test</h2>
+  <p>Solo dopo l'accesso e il consenso personale sul sito ufficiale LinkedIn,
+    il test riceve un token e interroga l'endpoint ufficiale userinfo.
+    Richiede soltanto i permessi <code>openid</code> e <code>profile</code>.
+    Questi consentono di ricevere un identificativo
     dell'account, il nome, il riferimento alla foto del profilo e le informazioni
     tecniche presenti nella risposta di autenticazione, come scadenza e lingua,
     se disponibili. Non è previsto il permesso <code>email</code>.</p>
@@ -57,30 +58,40 @@
     dal titolare, non un dato recuperato tramite l'API.</p>
 
   <h2>4. Finalità e contatti</h2>
-  <p>La finalità prevista per il futuro collegamento è riconoscere l'account
-    autorizzato e verificarne il funzionamento. Nello stato attuale non avviene
-    alcun trattamento di dati acquisiti tramite le API LinkedIn.</p>
+  <p>Il test verifica il funzionamento del collegamento con l'account del titolare,
+    su sua richiesta. Il trattamento è limitato a questo controllo tecnico,
+    sulla base del legittimo interesse a verificare il corretto funzionamento
+    e la sicurezza dell'integrazione per la propria attività. Non comporta
+    decisioni automatizzate con effetti giuridici o significativi.</p>
   <p>Chi scrive volontariamente al recapito indicato fornisce l'indirizzo email,
     il contenuto della richiesta ed eventuali allegati. Questi dati sono utilizzati
     per rispondere e gestire la richiesta, sulla base del legittimo interesse
     a dare seguito alle comunicazioni ricevute. Non inviare password o token.
     I dati non sono destinati a pubblicità, vendita o profilazione commerciale.</p>
-  <p>Prima dell'attivazione del collegamento saranno precisati i trattamenti
-    effettivi e le relative basi giuridiche. L'autorizzazione tecnica OAuth
-    non sostituisce questa valutazione.</p>
+  <p>L'autorizzazione tecnica OAuth è distinta dalla base giuridica del trattamento.
+    Qualsiasi funzione ulteriore richiederà una nuova valutazione e un aggiornamento
+    dell'informativa prima della sua attivazione.</p>
 
   <h2>5. Conservazione e sicurezza</h2>
-  <p>Il progetto prevede un collegamento eseguito localmente sul dispositivo del
-    titolare. Dati di autenticazione e token non devono essere pubblicati su GitHub,
-    inseriti in chat, registrati nei normali log o conservati nei report del progetto.</p>
+  <p>Il test viene eseguito localmente sul dispositivo del titolare. Il Client Secret
+    dell'app si inserisce nel modulo locale ed è trasmesso solo all'endpoint OAuth
+    ufficiale LinkedIn. Codice temporaneo, token e dati del profilo sono usati in
+    memoria per il test; non sono salvati su disco, nel database, nei report o nei log.
+    Non sono inviati a servizi di intelligenza artificiale. Il risultato mostra
+    soltanto se il test è riuscito, senza rendere visibili dati del profilo.</p>
+  <p>I riferimenti ai dati temporanei vengono eliminati dopo il test o in caso
+    di errore; il programma locale termina dopo 15 minuti. Non viene garantito
+    l'azzeramento fisico della memoria del dispositivo. Il browser riceve un cookie
+    tecnico locale di durata massima 15 minuti per proteggere il collegamento.
+    Il codice temporaneo può transitare nella navigazione del browser: non
+    condividerne l'indirizzo o la cronologia.</p>
   <p>Le comunicazioni inviate al recapito di contatto sono conservate per il tempo
     necessario a gestire la richiesta e gli eventuali obblighi di legge o esigenze
-    di tutela dei diritti. Prima di attivare le API saranno descritte le modalità
-    effettive di custodia dei token, accesso, conservazione e cancellazione dei dati.
-    La durata dei token è distinta dalla conservazione dei dati.</p>
+    di tutela dei diritti. Le eventuali informazioni conservate da LinkedIn e
+    dal fornitore di hosting seguono i termini delle rispettive informative.</p>
 
   <h2>6. Servizi esterni e hosting della pagina</h2>
-  <p>Per il futuro collegamento, LinkedIn riceverà le richieste di autenticazione
+  <p>Durante il test, LinkedIn riceve le richieste di autenticazione
     e le chiamate autorizzate e tratterà i dati secondo la propria
     <a href="https://www.linkedin.com/legal/privacy-policy">informativa privacy</a>.</p>
   <p>Questa informativa è pubblicata su GitHub. L'eventuale versione web
@@ -98,10 +109,12 @@
     nel trattamento dei dati recuperati tramite API.</p>
 
   <h2>7. Revoca e richieste sui dati</h2>
-  <p>Dopo l'attivazione, l'accesso potrà essere revocato dalle impostazioni
+  <p>L'accesso concesso può essere revocato dalle impostazioni
     LinkedIn relative alle applicazioni o ai servizi autorizzati.
     La revoca impedirà il successivo accesso autorizzato; non cancellerà
-    automaticamente eventuali copie già conservate localmente.</p>
+    automaticamente eventuali copie già conservate. Il test non conserva copie
+    del profilo. Scartare un token localmente non revoca l'autorizzazione
+    concessa su LinkedIn; l'autorizzazione può restare attiva fino alla revoca.</p>
   <p>Per richieste di accesso, rettifica, cancellazione, limitazione,
     opposizione o portabilità, nei casi previsti dalla normativa applicabile,
     scrivere a <a href="mailto:palmieritiziano99@gmail.com">palmieritiziano99@gmail.com</a>.
@@ -109,7 +122,7 @@
     <a href="https://www.garanteprivacy.it/">Garante per la protezione dei dati personali</a>.</p>
 
   <h2>8. Aggiornamenti</h2>
-  <p>Il testo sarà aggiornato prima di attivare il collegamento o aggiungere
+  <p>Il testo sarà aggiornato prima di aggiungere
     finalità, permessi, destinatari o modalità di conservazione diverse da quelle
     descritte. La data della versione è indicata all'inizio della pagina.</p>
   <footer>AWS B2B Agent è il nome del progetto di Tiziano Palmieri.
