@@ -10,3 +10,5 @@ Contatto: palmieritiziano99@gmail.com
 
 La pagina statica non contiene script, moduli, risorse remote o analytics.
 I trattamenti tecnici di GitHub Pages restano soggetti all'informativa di GitHub.
+
+Leggi l'[informativa privacy completa](privacy.md).
