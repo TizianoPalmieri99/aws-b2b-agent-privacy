@@ -6,8 +6,9 @@ Ultimo aggiornamento: 16 novembre 2026
 
 **Progetti in fase di sviluppo.** Questa informativa riguarda
 AWS B2B Agent e l'app dedicata AWS B2B Agent - Dati. Sono progetti riservati
-al titolare, non servizi aperti ad altri utenti. La lettura dei dati tramite
-portabilità non è ancora attiva; il precedente test OAuth locale è fermo.
+al titolare, non servizi aperti ad altri utenti. La configurazione di
+portabilità è disponibile ma richiede il consenso personale e l'inserimento
+del token nel programma Windows; il precedente test OAuth locale è fermo.
 
 ## 1. Chi gestisce l'app
 
@@ -60,7 +61,7 @@ dell'informativa prima della sua attivazione.
 
 ## 5. Conservazione e sicurezza
 
-Il test viene eseguito localmente sul dispositivo del titolare. Il Client Secret
+Il precedente test OAuth viene eseguito localmente sul dispositivo del titolare. Il Client Secret
 dell'app si inserisce nel modulo locale ed è trasmesso solo all'endpoint OAuth
 ufficiale LinkedIn. Codice temporaneo, token e dati del profilo sono usati in
 memoria per il test; non sono salvati su disco, nel database, nei report o nei log.
@@ -117,24 +118,46 @@ Resta possibile presentare un reclamo al
 
 ## 8. App dedicata alla portabilità: AWS B2B Agent - Dati
 
-È in preparazione un'app distinta per il prodotto ufficiale Member Data
+È disponibile un'integrazione distinta per il prodotto ufficiale Member Data
 Portability API (Member), dedicato all'accesso ai propri dati LinkedIn
 da parte dei membri idonei nello Spazio economico europeo e in Svizzera.
 Non si tratta di accesso al feed generale o di ricerca di altri profili.
 
-Lo scope previsto è `r_dma_portability_self_serve`. A seconda
+Lo scope richiesto è `r_dma_portability_self_serve`. A seconda
 dei domini effettivamente disponibili, il prodotto permette di recuperare
 dati del proprio account, profilo, post, messaggi, inviti e attività social.
 I messaggi e le interazioni possono contenere anche dati di interlocutori.
 La finalità prevista è analizzare i dati professionali del titolare e
 preparare bozze di contenuti o risposte. Non abilita invii o pubblicazioni.
 
-Questa funzione non è attualmente implementata né collegata. Prima di
-chiedere il consenso o acquisire dati saranno definiti e descritti i domini
-necessari, la base giuridica per i trattamenti effettivi, l'eventuale uso
-di servizi AI, i destinatari, i trasferimenti, i tempi di conservazione
-e la cancellazione. Il token di identità non viene convertito in un token
-di portabilità e non è sufficiente per leggere questi dati.
+La versione attuale verifica l'autorizzazione tramite l'endpoint ufficiale
+memberAuthorizations e permette, solo su richiesta, la lettura di una pagina
+del dominio PROFILE. Sono conservati in memoria per l'analisi soltanto nome,
+cognome, titolo professionale, riepilogo, settore e siti web, se presenti.
+Indirizzo, data di nascita e altri campi non professionali sono esclusi
+dal risultato. Non sono attivate letture di messaggi, post o contatti.
+
+Il token viene inserito in una finestra nativa sul dispositivo del titolare
+e conservato nel Gestore credenziali del suo account Windows, separato da
+Git, chat e file del progetto. Resta conservato fino alla rimozione tramite
+il programma o il Gestore credenziali; la scadenza o la revoca LinkedIn ne
+possono impedire prima l'utilizzo. La cancellazione locale non equivale
+alla revoca su LinkedIn e viceversa.
+
+La finalità è consentire al titolare di analizzare il proprio profilo
+professionale con l'assistente, sulla base del legittimo interesse a gestire
+la propria attività. Il programma non salva le risposte grezze su disco.
+Quando viene richiesta l'analisi con l'assistente, i campi professionali
+selezionati sono resi disponibili al servizio OpenAI utilizzato dal titolare.
+La conversazione e i suoi dati seguono le impostazioni del suo account e
+l'[informativa OpenAI](https://openai.com/policies/privacy-policy/),
+incluse conservazione e trasferimenti internazionali. Non si garantisce
+l'eliminazione della cronologia tramite la sola revoca del token.
+
+Per l'hosting pubblico, il collegamento LinkedIn e l'assistente si applicano
+le informative dei rispettivi fornitori anche per i trattamenti fuori dallo
+Spazio economico europeo e le relative garanzie. Ulteriori domini di dati
+o modalità di conservazione richiederanno un aggiornamento prima dell'uso.
 
 Secondo la documentazione LinkedIn, il consenso alla portabilità può
 avviare l'archiviazione dei dati da parte di LinkedIn per le API Snapshot
