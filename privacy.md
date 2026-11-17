@@ -2,7 +2,7 @@
 
 # Informativa privacy
 
-Ultimo aggiornamento: 16 novembre 2026
+Ultimo aggiornamento: 17 novembre 2026
 
 **Progetti in fase di sviluppo.** Questa informativa riguarda
 AWS B2B Agent e l'app dedicata AWS B2B Agent - Dati. Sono progetti riservati
@@ -131,11 +131,22 @@ La finalità prevista è analizzare i dati professionali del titolare e
 preparare bozze di contenuti o risposte. Non abilita invii o pubblicazioni.
 
 La versione attuale verifica l'autorizzazione tramite l'endpoint ufficiale
-memberAuthorizations e permette, solo su richiesta, la lettura di una pagina
-del dominio PROFILE. Sono conservati in memoria per l'analisi soltanto nome,
-cognome, titolo professionale, riepilogo, settore e siti web, se presenti.
-Indirizzo, data di nascita e altri campi non professionali sono esclusi
-dal risultato. Non sono attivate letture di messaggi, post o contatti.
+memberAuthorizations e permette, solo su richiesta del titolare, la lettura
+dei campi professionali del dominio PROFILE e dei domini POSITIONS, SKILLS,
+EDUCATION, PROJECTS, LANGUAGES, CERTIFICATIONS, RECOMMENDATIONS e
+JOB_SEEKER_PREFERENCES. Ogni lettura riguarda un dominio esplicito e un numero
+limitato di pagine. Non è garantito che ogni dato sia disponibile o completo.
+
+Sono selezionati nome, cognome, titolo, riepilogo, settore, siti web,
+descrizioni e date delle esperienze, competenze, formazione, progetti,
+lingue, certificazioni e relative informazioni professionali, testi e tipo
+delle raccomandazioni e preferenze lavorative pertinenti. I campi non
+riconosciuti non sono restituiti; possono essere esaminati i soli nomi dei
+campi per adeguare i filtri. Indirizzo, data di nascita, numeri di telefono,
+email dell'account e identificatori interni non sono selezionati. I campi
+autore delle raccomandazioni non sono selezionati, ma il testo libero può
+contenere riferimenti a persone. Non sono attivate letture di messaggi,
+post, rubrica o connessioni per questo lavoro sul profilo.
 
 Il token viene inserito in una finestra nativa sul dispositivo del titolare
 e conservato nel Gestore credenziali del suo account Windows, separato da
@@ -149,7 +160,10 @@ professionale con l'assistente, sulla base del legittimo interesse a gestire
 la propria attività. Il programma non salva le risposte grezze su disco.
 Quando viene richiesta l'analisi con l'assistente, i campi professionali
 selezionati sono resi disponibili al servizio OpenAI utilizzato dal titolare.
-La conversazione e i suoi dati seguono le impostazioni del suo account e
+I campi professionali filtrati e le analisi possono essere salvati localmente
+nei file di configurazione e nei report del progetto, fino alla cancellazione
+richiesta dal titolare. Questi file non sono destinati al repository pubblico
+dell'informativa. La conversazione e i suoi dati seguono le impostazioni del suo account e
 l'[informativa OpenAI](https://openai.com/policies/privacy-policy/),
 incluse conservazione e trasferimenti internazionali. Non si garantisce
 l'eliminazione della cronologia tramite la sola revoca del token.
